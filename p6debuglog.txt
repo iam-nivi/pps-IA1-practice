@@ -1,0 +1,91 @@
+ gcc -g p6original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x870: file p6original.c, line 31.
+(gdb) l
+17    float i=1,ans=1;
+18    while(ans<=n){
+19      i++;
+20      ans=i-1;
+21    }
+22    return i-1;
+23  }
+24  void output(float n)
+25  {
+26    printf("The square root of %f is %.2f",n,my_sqrt(n));
+(gdb) r
+Starting program: /home/runner/test4-iam-nivi-3/a.out 
+warning: Error disabling address space randomization: Opera
+ 
+ gcc -g p6original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x87b: file p6original.c, line 30.
+(gdb) l
+16    return value;
+17  }
+18  void output (char str1[20],char str2[20],int value)
+19  {
+20    if (value==0)
+21    {
+22      printf("strings are same\n");
+23    }
+24    else if(value>0)
+25    {
+(gdb) r
+Starting program: /home/runner/test4-iam-nivi-3/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p6original.c:30
+30  {
+(gdb) n
+33    input();
+(gdb) n
+enter thr first string:
+5
+34    value=computer(str1,str2);
+(gdb) n
+35    output(str1,str2,value);
+(gdb) n
+36    return 0;
+(gdb) n
+37  }
+(gdb) n
+__libc_start_main (main=0x562fc5a00873 <main>, argc=1, argv=0x7ffdd3099b88, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffdd3099b78) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) c
+Continuing.
+[Inferior 1 (process 326) exited normally]
+(gdb)  
